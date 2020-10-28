@@ -1,10 +1,10 @@
+import { transformUrlImage } from "/script/transformUrlImage.js";
 
-
-$(document).ready(function () {
+export function getCarteBySet(set) {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards?locale=frFR",
+        "url": "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/"+ set +"",
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "omgvamp-hearthstone-v1.p.rapidapi.com",
@@ -13,7 +13,12 @@ $(document).ready(function () {
     };
 
     $.ajax(settings).done(function (response) {
-        console.log(response);
-    });
-});
+        $.each(response, function (j, carte) {
+            transformUrlImage(carte)
+        });
 
+        console.log(response);
+
+        return response;
+    });
+}
