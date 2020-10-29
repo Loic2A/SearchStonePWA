@@ -1,14 +1,15 @@
 
 import { transformUrlImage } from "/script/transformUrlImage.js";
+import { buildResponseAllCarteJSON } from "/script/buildResponseJSON.js";
 import { getCarteByType } from "/script/getCarteByType.js";
 import { getCarteByName } from "/script/getCarteByName.js";
 
 
 $(document).ready(function () {
-    //getAllCarte();
+    getAllCarte();
     //getImage("https://art.hearthstonejson.com/v1/render/latest/frFR/512x/BOT_438.png");
     //getCarteByType("Hero%2520Power")
-    getCarteByName("Draconic%2520Lineage")
+    //getCarteByName("Draconic%2520Lineage")
 });
 
 function getAllCarte() {
@@ -32,7 +33,9 @@ function getAllCarte() {
 
         });
 
-        console.log(response);
+        response = buildResponseAllCarteJSON(response);
+
+        console.log(response)
 
         return response;
 
