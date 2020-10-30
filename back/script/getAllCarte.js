@@ -1,15 +1,22 @@
 
 import { transformUrlImage } from "/script/transformUrlImage.js";
 import { buildResponseAllCarteJSON } from "/script/buildResponseJSON.js";
-import { getCarteByType } from "/script/getCarteByType.js";
-import { getCarteByName } from "/script/getCarteByName.js";
+//import { getCarteByType } from "/functions/getCarteByType.js";
+//import { getCarteByName } from "/functions/getCarteByName.js";
 
 
 $(document).ready(function () {
-    getAllCarte();
+    //getAllCarte();
     //getImage("https://art.hearthstonejson.com/v1/render/latest/frFR/512x/BOT_438.png");
     //getCarteByType("Hero%2520Power")
     //getCarteByName("Draconic%2520Lineage")
+
+    fetch('https://us-central1-searchstone-250a5.cloudfunctions.net/helloWorld')
+        .then(response => {
+            console.log(response);
+        })
+        .catch(console.error);
+
 });
 
 function getAllCarte() {

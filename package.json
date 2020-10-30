@@ -2,7 +2,7 @@
   "name": "back",
   "version": "1.0.0",
   "description": "",
-  "main": "script/getAllCarte.js",
+  "main": "back/script/getAllCarte.js",
   "scripts": {
     "start": "live-server --port=9090",
     "test": "echo \"Error: no test specified\" && exit 1"
