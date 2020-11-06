@@ -2,12 +2,15 @@
   "name": "back",
   "version": "1.0.0",
   "description": "",
-  "main": "back/script/getAllCarte.js",
+  "main": "app/back/script/getAllCarte.js",
   "scripts": {
     "start": "live-server --port=9090",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
