@@ -2,10 +2,13 @@
   "name": "back",
   "version": "1.0.0",
   "description": "",
-  "main": "app/back/script/getAllCarte.js",
+  "main": "index.js",
   "scripts": {
     "start": "live-server --port=9090",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "12.x"
   },
   "keywords": [],
   "author": "",
