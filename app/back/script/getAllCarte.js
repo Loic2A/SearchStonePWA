@@ -2,18 +2,7 @@
 import { transformUrlImage } from "/back/script/transformUrlImage.js";
 import { buildResponseAllCarteJSON } from "/back/script/buildResponseJSON.js";
 
-$(document).ready(function () {
-    getAllCarte();
-
-    fetch('https://us-central1-searchstone-250a5.cloudfunctions.net/helloWorld')
-        .then(response => {
-            console.log(response);
-        })
-        .catch(console.error);
-
-});
-
-function getAllCarte() {
+export function getAllCarte() {
     var settings = {
         "async": true,
         "crossDomain": true,
