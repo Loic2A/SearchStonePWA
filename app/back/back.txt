@@ -1,0 +1,75 @@
+{8 items
+"patch":"3.0.0.9786"
+"classes":[10 items
+0:"Druid"
+1:"Hunter"
+2:"Mage"
+3:"Paladin"
+4:"Priest"
+5:"Rogue"
+6:"Shaman"
+7:"Warlock"
+8:"Warrior"
+9:"Dream"
+]
+"sets":[14 items
+0:"Basic"
+1:"Classic"
+2:"Credits"
+3:"Naxxramas"
+4:"Debug"
+5:"Goblins vs Gnomes"
+6:"Missions"
+7:"Promotion"
+8:"Reward"
+9:"System"
+10:"Blackrock Mountain"
+11:"Hero Skins"
+12:"Tavern Brawl"
+13:"The Grand Tournament"
+]
+"types":[6 items
+0:"Hero"
+1:"Minion"
+2:"Spell"
+3:"Enchantment"
+4:"Weapon"
+5:"Hero Power"
+]
+"factions":[3 items
+0:"Horde"
+1:"Alliance"
+2:"Neutral"
+]
+"qualities":[5 items
+0:"Free"
+1:"Common"
+2:"Rare"
+3:"Epic"
+4:"Legendary"
+]
+"races":[7 items
+0:"Demon"
+1:"Dragon"
+2:"Mech"
+3:"Murloc"
+4:"Beast"
+5:"Pirate"
+6:"Totem"
+]
+"locales":[13 items
+0:"deDE"
+1:"enGB"
+2:"enUS"
+3:"esES"
+4:"esMX"
+5:"frFR"
+6:"itIT"
+7:"koKR"
+8:"plPL"
+9:"ptBR"
+10:"ruRU"
+11:"zhCN"
+12:"zhTW"
+]
+}
