@@ -1,3 +1,4 @@
+//pas toucher ca register le sw
 if (navigator.serviceWorker) {
     navigator.serviceWorker.register('sw.js').then(function(reg) {
         // registration worked
