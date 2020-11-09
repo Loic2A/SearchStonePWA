@@ -9,3 +9,10 @@ if (navigator.serviceWorker) {
     });
 }
 
+function submitAdvForm(clas, set, type, faction, quality, race){
+    console.log(clas,  set, type, faction, quality, race);
+}
+
+function submitSimpleForm(cardName){
+    console.log(cardName);
+}
