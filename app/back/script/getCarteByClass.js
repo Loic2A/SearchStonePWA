@@ -1,6 +1,6 @@
 import { transformUrlImage } from "/back/script/transformUrlImage.js";
 
-export function getCarteByClass(classe) {
+export function getCarteByClass(classe, callback) {
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -19,6 +19,6 @@ export function getCarteByClass(classe) {
 
         console.log(response);
 
-        return response;
+        callback(response);
     });
 }

@@ -1,6 +1,6 @@
 import { transformUrlImage } from "/back/script/transformUrlImage.js";
 
-export function getCarteBySet(set) {
+export function getCarteBySet(set, callback) {
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -17,8 +17,8 @@ export function getCarteBySet(set) {
             transformUrlImage(carte)
         });
 
-        console.log(response);
+        //console.log(response);
 
-        return response;
+        callback(response);
     });
 }

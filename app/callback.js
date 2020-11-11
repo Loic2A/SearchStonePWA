@@ -11,43 +11,43 @@ $(document).ready(function(){
     $("#submitNameForm").click(function() {
         var name = document.nameForm.name.value.replace(/ /g, "%2520");
         console.log(name);
-        getCarteByName(name);
+        getCarteByName(name, displayCards);
     });
 
     $("#submitClasForm").click(function() {
         var clas = document.clasForm.clas.value;
         console.log(clas);
-        getCarteByClass(clas);
+        getCarteByClass(clas, displayCards);
     });
 
     $("#submitSetForm").click(function() {
         var set = document.setForm.set.value;
         console.log(set);
-        getCarteBySet(set);
+        getCarteBySet(set, displayCards);
     });
 
     $("#submitTypeForm").click(function() {
         var type = document.typeForm.type.value;
         console.log(type);
-        getCarteByType(type);
+        getCarteByType(type, displayCards);
     });
 
     $("#submitFactionForm").click(function() {
         var faction = document.factionForm.faction.value;
         console.log(faction);
-        getCarteByFaction(faction);
+        getCarteByFaction(faction, displayCards);
     });
 
     $("#submitQualityForm").click(function() {
         var quality = document.qualityForm.quality.value;
         console.log(quality);
-        getCarteByQuality(quality);
+        getCarteByQuality(quality, displayCards);
     });
 
     $("#submitRaceForm").click(function() {
         var race = document.raceForm.race.value;
         console.log(race);
-        getCarteByRace(race);
+        getCarteByRace(race, displayCards);
     });
 
     $("#submitAdvForm").click(function() {
