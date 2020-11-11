@@ -9,10 +9,46 @@ if (navigator.serviceWorker) {
     });
 }
 
-function submitAdvForm(clas, set, type, faction, quality, race){
-    console.log(clas,  set, type, faction, quality, race);
+function switchSearchElement(searchElement){
+    activeElement = document.getElementsByClassName('active');
+    elementToHide = activeElement[0].id;
+    document.getElementById(elementToHide).className = "searchBtn"
+    btnToActivate = searchElement + "Btn";
+    document.getElementById(btnToActivate).className = "searchBtn active";
+    formToHide = elementToHide.slice(0,-3) + "Form";
+    document.getElementById(formToHide).style.display = "none";
+    formToShow = searchElement + "Form";
+    document.getElementById(formToShow).style.display = "block";
 }
 
-function submitSimpleForm(cardName){
+function submitNameForm(cardName){
     console.log(cardName);
+}
+
+function submitClasForm(cardClas){
+    console.log(cardClas);
+}
+
+function submitSetForm(cardSet){
+    console.log(cardSet);
+}
+
+function submitTypeForm(cardType){
+    console.log(cardType);
+}
+
+function submitFactionForm(cardFaction){
+    console.log(cardFaction);
+}
+
+function submitQualityForm(cardQuality){
+    console.log(cardQuality);
+}
+
+function submitRaceForm(cardRace){
+    console.log(cardRace);
+}
+
+function submitAdvForm(clas, set, type, faction, quality, race){
+    console.log(clas,  set, type, faction, quality, race);
 }

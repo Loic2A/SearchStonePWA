@@ -1,0 +1,78 @@
+html,
+body,
+h3 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 0;
+}
+
+.main_container {
+  display: flex;
+}
+
+#sidebar {
+  width: 20vw;
+  max-width: 300px;
+  height: 100vh;
+  background-color: rgb(76, 122, 207);
+}
+
+#sidebar form,
+#sidebar form input,
+#sidebar form select {
+  width: calc(100% - 10px);
+  padding: 0;
+  margin: 5px;
+  border: none;
+}
+
+#sidebar form input,
+#sidebar form select {
+  padding: 3px 0px;
+}
+
+#title {
+  font-size: 2em;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0px;
+}
+
+#searchType {
+  display: flex;
+  flex-wrap: wrap;
+  color: #fff;
+  margin: 0px 10px;
+}
+
+.searchBtn {
+  flex-grow: 1;
+  text-align: center;
+  background-color: rgb(146, 108, 77);
+  border: 5px outset rgb(133, 98, 69);
+  padding: 5px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.searchBtn:hover {
+  background-color: rgb(201, 156, 119);
+  border: 5px outset rgb(184, 143, 110);
+}
+
+.searchBtn:active,
+.active {
+  background-color: rgb(139, 102, 72);
+  border: 5px inset rgb(184, 143, 110);
+}
+
+.active:hover {
+  background-color: rgb(109, 75, 47);
+  border: 5px inset rgb(156, 117, 85);
+}
+
+#cartes_container {
+  display: flex;
+  flex-grow: 1;
+  height: 100vh;
+  background-color: rgb(116, 93, 72);
+}
