@@ -17,7 +17,7 @@ export function getCarteByClass(classe, callback) {
             transformUrlImage(carte)
         });
 
-        console.log(response);
+        //console.log(response);
 
         callback(response);
     });
