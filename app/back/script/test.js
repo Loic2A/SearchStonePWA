@@ -1,7 +1,9 @@
-import {getAllCarte} from "/back/script/getAllCarte.js";
-import {getCarteByType} from "/back/script/getCarteByType.js";
+import { getCarteByMultiple } from "/back/script/getCarteByMultiple.js";
 
 $(document).ready(function () {
-    getAllCarte();
-    getCarteByType('Spell');
+    
+	const json = '{"classes": "Druid", "sets": null, "types": null, "factions": null, "qualities": null, "races": null}'
+    const args = JSON.parse(json);
+    getCarteByMultiple(args)
+    
 });
