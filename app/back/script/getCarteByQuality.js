@@ -1,6 +1,6 @@
 import { transformUrlImage } from "/back/script/transformUrlImage.js";
 
-export function getCarteByQuality(quality) {
+export function getCarteByQuality(quality, callback) {
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -19,6 +19,6 @@ export function getCarteByQuality(quality) {
 
         console.log(response);
 
-        return response;
+        callback(response);
     });
 }

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "live-server --port=9090",
+    "start": "like_button.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "file-system": "^2.2.2",
+    "jquery": "^3.5.1",
     "react": "^17.0.1"
   }
 }

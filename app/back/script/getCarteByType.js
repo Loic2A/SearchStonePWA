@@ -1,6 +1,6 @@
 import { transformUrlImage } from "/back/script/transformUrlImage.js";
 //Types : Hero, Hero%2520Power, Enchantment, Spell, Minion, Weapon
-export function getCarteByType(type) {
+export function getCarteByType(type, callback) {
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -19,9 +19,9 @@ export function getCarteByType(type) {
             });
 
 
-        console.log(response);
+        //console.log(response);
 
-        return response;
+        callback(response);
 
     });
 }

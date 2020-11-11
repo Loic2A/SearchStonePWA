@@ -1,10 +1,10 @@
 import { transformUrlImage } from "/back/script/transformUrlImage.js";
 
-export function getCarteByRace(race) {
+export function getCarteByRace(race, callback) {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/"+ set +"",
+        "url": "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/"+ race +"",
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "omgvamp-hearthstone-v1.p.rapidapi.com",
@@ -17,8 +17,8 @@ export function getCarteByRace(race) {
             transformUrlImage(carte)
         });
 
-        console.log(response);
+        //console.log(response);
 
-        return response;
+        callback(response);
     });
 }

@@ -1,6 +1,6 @@
 import { transformUrlImage } from "/back/script/transformUrlImage.js";
 
-export function getCarteByFaction(faction) {
+export function getCarteByFaction(faction, callback) {
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -17,8 +17,8 @@ export function getCarteByFaction(faction) {
             transformUrlImage(carte)
         });
 
-        console.log(response);
+        //console.log(response);
 
-        return response;
+        callback(response);
     });
 }

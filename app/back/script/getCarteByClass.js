@@ -1,8 +1,8 @@
 import { transformUrlImage } from "/back/script/transformUrlImage.js";
 
-export function getCarteByClass(classe) {
+export function getCarteByClass(classe, callback) {
     var settings = {
-        "async": false,
+        "async": true,
         "crossDomain": true,
         "url": "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/"+ classe +"",
         "method": "GET",
@@ -19,6 +19,6 @@ export function getCarteByClass(classe) {
 
         console.log(response);
 
-        return response;
+        callback(response);
     });
 }
