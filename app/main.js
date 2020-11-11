@@ -29,8 +29,10 @@ function displayCards(jsonList){
     for(var key in jsonList){
         if(jsonList[key].type != "Enchantment"){
             var elem = document.createElement("img");
+            var divElem = document.createElement("div");
             elem.setAttribute("src", jsonList[key].img);
-            document.getElementById("cartes_container").appendChild(elem);
+            divElem.appendChild(elem);
+            document.getElementById("cartes_container").appendChild(divElem);
         }
     }
 }
