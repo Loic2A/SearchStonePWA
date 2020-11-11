@@ -4,7 +4,7 @@ export function getCarteByRace(race) {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/"+ set +"",
+        "url": "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/"+ race +"",
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "omgvamp-hearthstone-v1.p.rapidapi.com",

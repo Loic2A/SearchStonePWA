@@ -20,9 +20,7 @@
           </div>
           <form id="nameForm" name="nameForm">
             <input name="name" placeholder="Nom"><br/>
-            <input type="submit" value="Rechercher"
-                onclick="submitNameForm(document.nameForm.name.value);
-                         return false;">
+            <input type="button" id="submitNameForm" value="Rechercher">
           </form>
           <form id="clasForm" name="clasForm" style="display:none;">
             <select name="clas">
@@ -37,9 +35,7 @@
               <option value="Warrior">Warrior</option>
               <option value="Dream">Dream</option>
             </select><br/>
-            <input type="submit" value="Rechercher"
-                onclick="submitClasForm(document.clasForm.clas.value);
-                         return false;">
+            <input type="button" id="submitClasForm" value="Rechercher">
           </form>
           <form id="setForm" name="setForm" style="display:none;">
             <select name="set">
@@ -55,13 +51,11 @@
               <option value="Reward">Reward</option>
               <option value="System">System</option>
               <option value="Blackrock Mountain">Blackrock Mountain</option>
-              <option value="Hero Skins">Hero Skins</option>
+              <option value="Hero%2520Skins">Hero Skins</option>
               <option value="Tavern Brawl">Tavern Brawl</option>
-              <option value="The Grand Tournament">The Grand Tournament</option>
+              <option value="The%2520Grand%2520Tournament">The Grand Tournament</option>
             </select><br/>
-            <input type="submit" value="Rechercher"
-                onclick="submitSetForm(document.setForm.set.value);
-                         return false;">
+            <input type="button" id="submitSetForm" value="Rechercher">
           </form>
           <form id="typeForm" name="typeForm" style="display:none;">
             <select name="type">
@@ -71,11 +65,9 @@
               <option value="Spell">Spell</option>
               <option value="Enchantment">Enchantment</option>
               <option value="Weapon">Weapon</option>
-              <option value="Hero Power">Hero Power</option>
+              <option value="Hero%2520Power">Hero Power</option>
             </select><br/>
-            <input type="submit" value="Rechercher"
-                onclick="submitTypeForm(document.typeForm.type.value);
-                         return false;">
+            <input type="button" id="submitTypeForm" value="Rechercher">
           </form>
           <form id="factionForm" name="factionForm" style="display:none;">
             <select name="faction">
@@ -84,9 +76,7 @@
               <option value="Alliance">Alliance</option>
               <option value="Neutral">Neutral</option>
             </select><br/>
-            <input type="submit" value="Rechercher"
-                onclick="submitFactionForm(document.factionForm.faction.value);
-                         return false;">
+            <input type="button" id="submitFactionForm" value="Rechercher">
           </form>
           <form id="qualityForm" name="qualityForm" style="display:none;">
             <select name="quality">
@@ -97,9 +87,7 @@
               <option value="Epic">Epic</option>
               <option value="Legendary">Legendary</option>
             </select><br/>
-            <input type="submit" value="Rechercher"
-                onclick="submitQualityForm(document.qualityForm.quality.value);
-                         return false;">
+            <input type="button" id="submitQualityForm" value="Rechercher">
           </form>
           <form id="raceForm" name="raceForm" style="display:none;">
             <select name="race">
@@ -112,9 +100,7 @@
               <option value="Pirate">Pirate</option>
               <option value="Totem">Totem</option>
             </select><br/>
-            <input type="submit" value="Rechercher"
-                onclick="submitRaceForm(document.raceForm.race.value);
-                         return false;">
+            <input type="button" id="submitRaceForm" value="Rechercher">
           </form>
             <form id="advForm" name="advForm" style="display:none;">
                 <select name="advClas">
@@ -142,9 +128,9 @@
                   <option value="Reward">Reward</option>
                   <option value="System">System</option>
                   <option value="Blackrock Mountain">Blackrock Mountain</option>
-                  <option value="Hero Skins">Hero Skins</option>
-                  <option value="Tavern Brawl">Tavern Brawl</option>
-                  <option value="The Grand Tournament">The Grand Tournament</option>
+                  <option value="Hero%2520Skins">Hero Skins</option>
+                  <option value="Tavern%2520Brawl">Tavern Brawl</option>
+                  <option value="The%2520Gran%2520Tournament">The Grand Tournament</option>
                 </select><br/>
                 <select name="advType">
                   <option value="">--- Type ---</option>
@@ -153,7 +139,7 @@
                   <option value="Spell">Spell</option>
                   <option value="Enchantment">Enchantment</option>
                   <option value="Weapon">Weapon</option>
-                  <option value="Hero Power">Hero Power</option>
+                  <option value="Hero%2520Power">Hero Power</option>
                 </select><br/>
                 <select name="advFaction">
                   <option value="">--- Faction ---</option>
@@ -179,14 +165,7 @@
                   <option value="Pirate">Pirate</option>
                   <option value="Totem">Totem</option>
                 </select><br/>
-                <input type="submit" value="Rechercher" 
-                onclick="submitAdvForm(document.advForm.advClas.value,
-                                       document.advForm.advSet.value,
-                                       document.advForm.advType.value,
-                                       document.advForm.advFaction.value,
-                                       document.advForm.advQuality.value,
-                                       document.advForm.advRace.value);
-                         return false;">
+                <input type="button" id="submitAdvForm" value="Rechercher">
               </form>
         </div>
         <div id="cartes_container">
@@ -194,6 +173,7 @@
         </div>
     </div>
     <script src="main.js"></script>
+    <script type="module" src="callback.js"></script>
     <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
     <script type="text/jsx" src="components/sidebar.js"></script>
