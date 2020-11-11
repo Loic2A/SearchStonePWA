@@ -1,48 +1,65 @@
-import { transformUrlImage } from "/back/script/transformUrlImage.js";
+import { getCarteByClass } from "/back/script/getCarteByClass.js";
+import { getCarteBySet } from "/back/script/getCarteBySet.js";
+import { getCarteByType } from "/back/script/getCarteByType.js";
+import { getCarteByFaction } from "/back/script/getCarteByFaction.js";
+import { getCarteByQuality } from "/back/script/getCarteByQuality.js";
+import { getCarteByRace } from "/back/script/getCarteByRace.js";
+
 //fait une requete sur l'api à partir d'un critère puis filtre le resultat obtenus selon les autres critères
 export function getCarteByMultiple(args) {
-    if (args[0] != null) {
-        Response = getCarteByClass(args.classes);
-        $.each(Response){
-            if (Response.sets == args.sets & Response.types == args.types & Response.factions == args.factions & Response.qualities == args.qualities & Response.races == args.races)
-                Response1 = Response;
-        }
-        return Response1;
+    var response1 = {};
+    if (args.classes != null) {
+        console.log("coucou classe");
+        $.when(getCarteByClass(args.classes)).done(function (response) {
+            $.each(response, function (j, carte) {
+                console.log("coucou each");
+                if (carte.sets == args.sets & carte.types == args.types & carte.factions == args.factions & carte.qualities == args.qualities & carte.races == args.races) {
+                    console.log("coucou");
+                    response1.push(set);
+                };
+            });
+        });
     }
-    else if (args[1] != null) {
+    else if (args.sets != null) {
         Response = getCarteBySet(args.sets);
-        $.each(Response){
-            if (Response.types == args.types & Response.factions == args.factions & Response.qualities == args.qualities & Response.races == args.races)
-                Response1 = Response;
-        }
-        return Response1;
+        $.each(Response, function(i, set){
+            if (set.types == args.types & set.factions == args.factions & set.qualities == args.qualities & set.race == args.races)
+                console.log("coucou");
+                Response1.push(set);
+        });
     }
-    else if (args[2] != null) {
+    else if (args.types != null) {
         Response = getCarteByType(args.types);
-        $.each(Response){
-            if (Response.factions == args.factions & Response.qualities == args.qualities & Response.races == args.races)
-                Response1 = Response;
-        }
-        return Response1;
+        console.log("coucou");
+        $.each(Response, function (i, set) {
+            console.log("coucou");
+            console.log(set);
+            if (set.faction == args.factions & set.rarity == args.qualities & set.race == args.races) {
+                console.log("coucou");
+                Response1.push(set);
+            }
+                
+        });
     }
-    else if (args[3] != null) {
+    else if (args.factions != null) {
         Response = getCarteByFaction(args.factions);
-        $.each(Response){
-            if (Response.qualities == args.qualities & Response.races == args.races)
-                Response1 = Response;
-        }
-        return Response1;
+        $.each(Response, function (i, set){
+            if (set.qualities == args.qualities & set.races == args.races)
+                console.log("coucou");
+                Response1.push(set);
+        });
     }
-    else if (args[4] != null) {
+    else if (args.qualities != null) {
         Response = getCarteByQuality(args.qualities);
-        $.each(Response){
-            if (Response.races == args.races)
-                Response1 = Response;
-        }
-        return Response1;
+        $.each(Response, function (i, set){
+            if (set.races == args.races)
+                console.log("coucou");
+                Reponse.push(set);
+        });
     }
-    else if (args[5] != null) {
-        Response = getCarteByRace(args.races);
-        return Response;
+    else if (args.races != null) {
+        Response1 = getCarteByRace(args.races);
     }
+    console.log(response1);
+    return response1;
 }
