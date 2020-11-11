@@ -6,35 +6,35 @@ import { getCarteByQuality } from "/back/script/getCarteByQuality.js";
 import { getCarteByRace } from "/back/script/getCarteByRace.js";
 
 let args = {};
+let callbackGlobal;
 
 //fait une requete sur l'api à partir d'un critère puis filtre le resultat obtenus selon les autres critères
-export function getCarteByMultiple(arg) {
+export function getCarteByMultiple(arg, callback) {
 
     args = arg;
+    callbackGlobal = callback;
 
-    var response1 = {};
+    var response1 = JSON.parse('{}');
 
     if (args.classes != null) {
         console.log("coucou classe");
-        response1 = getCarteByClass(args.classes, trieClasse);
+        getCarteByClass(args.classes, trieClasse);
     } else if (args.sets != null) {
         console.log("coucou set");
-        response1= getCarteBySet(args.sets, trieSet);
+        getCarteBySet(args.sets, trieSet);
     } else if (args.types != null) {
         console.log("coucou type");
-        response1 = getCarteByType(args.types, trieType);
+        getCarteByType(args.types, trieType);
     } else if (args.factions != null) {
         console.log("coucou faction");
-        response1 = getCarteByFaction(args.factions, trieFaction);
+        getCarteByFaction(args.factions, trieFaction);
     } else if (args.qualities != null) {
         console.log("coucou quality");
-        response1 = getCarteByQuality(args.qualities, trieQuality);
+        getCarteByQuality(args.qualities, trieQuality);
     } else if (args.races != null) {
         console.log("coucou race");
-        response1 = getCarteByRace(args.races, trieRace);
+        getCarteByRace(args.races, trieRace);
     }
-    console.log(response1);
-    return response1;
 }
 
 function trieClasse(response) {
@@ -42,68 +42,68 @@ function trieClasse(response) {
 
     $.each(response, function (j, carte) {
 
-        console.log("coucou each");
+        //console.log("coucou each");
         if (carte.sets == args.sets & carte.types == args.types & carte.factions == args.factions & carte.qualities == args.qualities & carte.races == args.races) {
-            console.log("coucou");
-            res.push(set);
+            //console.log("coucou");
+            $.extend(true, res, carte)
         }
     });
 
-    return res;
+    callbackGlobal(res);
 }
 
 function trieSet(response) {
     var res = {};
 
-    $.each(response, function (i, set) {
-        if (set.types == args.types & set.factions == args.factions & set.qualities == args.qualities & set.race == args.races) {
-            console.log("coucou");
-            res.push(set);
+    $.each(response, function (i, carte) {
+        if (carte.types == args.types & carte.factions == args.factions & carte.qualities == args.qualities & carte.race == args.races) {
+            //console.log("coucou");
+            $.extend(true, res, carte)
         }
     });
 
-    return res;
+    callbackGlobal(res);
 }
 
 function trieType(response) {
     var res = {};
 
-    $.each(response, function (i, set) {
-        if (set.faction == args.factions & set.rarity == args.qualities & set.race == args.races) {
-            console.log("coucou");
-            res.push(set);
+    $.each(response, function (i, carte) {
+        if (carte.faction == args.factions & carte.rarity == args.qualities & carte.race == args.races) {
+            //console.log("coucou");
+            $.extend(true, res, carte)
         }
     });
 
-    return res;
+    callbackGlobal(res);
 }
 
 function trieFaction(response) {
     var res = {};
 
     $.each(response, function (i, set) {
-        if (set.qualities == args.qualities & set.races == args.races) {
-            console.log("coucou");
-            res.push(set);
+        if (carte.qualities == args.qualities & carte.races == args.races) {
+            //console.log("coucou");
+            $.extend(true, res, carte)
         }
     });
 
-    return res;
+    callbackGlobal(res);
 }
 
 function trieQuality(response) {
     var res = {};
 
-    $.each(response, function (i, set) {
-        if (set.qualities == args.qualities & set.races == args.races) {
-            console.log("coucou");
-            res.push(set);
+    $.each(response, function (i, carte) {
+        if (carte.races == args.races) {
+            //console.log("coucou");
+            $.extend(true, res, carte)
         }
     });
 
-    return res;
+    callbackGlobal(res);
 }
 
 function trieRace(response) {
-    return response;
+    callbackGlobal(response);
 }
