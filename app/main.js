@@ -64,7 +64,7 @@ function displayCards(jsonList = currCardList){
     jsonList = sortJSON(jsonList, currSort, true);
     currCardList = jsonList;
     document.getElementById("cartes_container").innerHTML = "";
-    console.log(jsonList);
+    //console.log(jsonList);
     lenList = jsonList.length;
     cardNbr = 0;
     for(var key in jsonList){

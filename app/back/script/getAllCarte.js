@@ -25,8 +25,6 @@ export function getAllCarte() {
 
         response = buildResponseAllCarteJSON(response);
 
-        console.log(response)
-
         return response;
 
     });
