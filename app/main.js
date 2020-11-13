@@ -55,6 +55,7 @@ function displayCards(jsonList = currCardList){
     jsonList = sortJSON(jsonList, currSort, true);
     document.getElementById("cartes_container").innerHTML = "";
     console.log(jsonList);
+    lenList = jsonList.length;
     for(var key in jsonList){
         if(jsonList[key].type != "Enchantment"){
             var elem = document.createElement("img");
@@ -62,8 +63,11 @@ function displayCards(jsonList = currCardList){
             elem.setAttribute("src", jsonList[key].img);
             divElem.appendChild(elem);
             document.getElementById("cartes_container").appendChild(divElem);
+        }else{
+            lenList -= 1;
         }
     }
+    afficherNotificationRecherche(lenList);
 }
 
 function sortJSON(jsonArray, termToSort, boolAsc){
