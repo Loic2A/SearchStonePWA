@@ -24,6 +24,17 @@ if (navigator.serviceWorker) {
     });
 }
 
+$(document).ready(function(){
+    $("#tooltipWrapper").click(function(event){
+        document.getElementById("tooltipWrapper").style.display = "none";
+    });
+});
+$(document).ready(function(){
+    $("#tooltip").click(function(event){
+        event.stopPropagation();
+    });
+});
+
 function afficherNotificationRecherche(len) {
     if(permNotification === true) {
         const options = {
@@ -61,6 +72,7 @@ function displayCards(jsonList = currCardList){
             var elem = document.createElement("img");
             var divElem = document.createElement("div");
             elem.setAttribute("src", jsonList[key].img);
+            elem.setAttribute("class", "cardImage");
             elem.setAttribute("onClick", "displayTooltip(" + cardNbr + ")");
             divElem.appendChild(elem);
             document.getElementById("cartes_container").appendChild(divElem);
@@ -83,5 +95,45 @@ function sortJSON(jsonArray, termToSort, boolAsc){
 }
 
 function displayTooltip(cardNbr){
-    document.getElementById("tooltip").style.display="block";
+    var tooltip = document.getElementById("tooltip");
+    tooltip.innerHTML = "";
+    var image = document.createElement("img");
+    var allData = document.createElement("div");
+    image.setAttribute("src", currCardList[cardNbr].img);
+    allData.setAttribute("id", "allData");
+    allData.appendChild(createLine(cardNbr, "name", "Nom"));
+    allData.appendChild(createLine(cardNbr, "type", "Type"));
+    if(currCardList[cardNbr]["text"] != undefined){
+        allData.appendChild(createLine(cardNbr, "text", "Texte"));
+    }
+    if(currCardList[cardNbr]["cost"] != undefined){
+        allData.appendChild(createLine(cardNbr, "cost", "Coût"));
+    }
+    if(currCardList[cardNbr]["attack"] != undefined){
+        allData.appendChild(createLine(cardNbr, "attack", "Attaque"));
+    }
+    if(currCardList[cardNbr]["health"] != undefined){
+        allData.appendChild(createLine(cardNbr, "health", "Vie"));
+    }
+    tooltip.appendChild(image);
+    tooltip.appendChild(allData);
+    document.getElementById("tooltipWrapper").style.display="flex";
+}
+
+function createLine(cardNbr, cardInfo, infoTitle){
+    var title = document.createElement("div");
+    title.setAttribute("class", "infoTitle");
+    var info = document.createElement("div");
+    info.setAttribute("class", "info");
+    title.innerHTML = infoTitle+": ";
+    if (cardInfo != "text"){
+        info.innerHTML = currCardList[cardNbr][cardInfo];
+    }else{
+        info.innerHTML = currCardList[cardNbr][cardInfo].replace(/\\n/g, '<br/>');
+    }
+    var data = document.createElement("div");
+    data.setAttribute("class", "data");
+    data.appendChild(title);
+    data.appendChild(info);
+    return data;
 }
