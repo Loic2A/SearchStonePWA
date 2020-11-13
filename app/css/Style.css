@@ -129,3 +129,15 @@ h3 {
 .info {
   font-size: 1.2em;
 }
+.searchButton{
+  border: solid 2px rgb(116, 93, 72);
+  background: rgb(116, 93, 72);
+  height: 35px;
+  width: 110px;
+  border-radius: 5px;
+  color: #fff;
+}
+.searchButton:hover{
+  background: rgb(201, 156, 119);
+  cursor: pointer;
+}
