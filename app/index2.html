@@ -1,16 +1,192 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Application Searchstone</title>
     <script src="lib/jquery-3.5.1.js"></script>
     <script type="module" src="back/script/test.js"></script>
+    <link rel="stylesheet" href="css/Style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
+<<<<<<< HEAD
 <p> Titre </p>
 truc
 <div id="testIMG"></div>
 
 </body>
 </html>
+=======
+    <div class="main_container">
+        <div id="sidebar" class="menu_gauche_container">
+          <h3 id="title">SearchStone</h3><br/>
+          <div id="searchType">
+            <div onClick="switchSearchElement('name')" id="nameBtn" class="searchBtn active">Nom</div>
+            <div onClick="switchSearchElement('clas')" id="clasBtn" class="searchBtn">Classe</div>
+            <div onClick="switchSearchElement('set')" id="setBtn" class="searchBtn">Set</div>
+            <div onClick="switchSearchElement('type')" id="typeBtn" class="searchBtn">Type</div>
+            <div onClick="switchSearchElement('faction')" id="factionBtn" class="searchBtn">Faction</div>
+            <div onClick="switchSearchElement('quality')" id="qualityBtn" class="searchBtn">Qualité</div>
+            <div onClick="switchSearchElement('race')" id="raceBtn" class="searchBtn">Race</div>
+            <div onClick="switchSearchElement('adv')" id="advBtn" class="searchBtn">Avancé</div>
+          </div>
+          <form id="nameForm" name="nameForm">
+            <input name="name" placeholder="Nom"><br/>
+            <input type="button" id="submitNameForm" value="Rechercher">
+          </form>
+          <form id="clasForm" name="clasForm" style="display:none;">
+            <select name="clas">
+              <option value="">--- Class ----</option>
+              <option value="Hunter">Hunter</option>
+              <option value="Mage">Mage</option>
+              <option value="Paladin">Paladin</option>
+              <option value="Priest">Priest</option>
+              <option value="Rogue">Rogue</option>
+              <option value="Shaman">Shaman</option>
+              <option value="Warlock">Warlock</option>
+              <option value="Warrior">Warrior</option>
+              <option value="Dream">Dream</option>
+            </select><br/>
+            <input type="button" id="submitClasForm" value="Rechercher">
+          </form>
+          <form id="setForm" name="setForm" style="display:none;">
+            <select name="set">
+              <option value="">--- Set ---</option>
+              <option value="Basic">Basic</option>
+              <option value="Classic">Classic</option>
+              <option value="Credits">Credits</option>
+              <option value="Naxxramas">Naxxramas</option>
+              <option value="Goblins vs Gnomes">Goblins vs Gnomes</option>
+              <option value="Missions">Missions</option>
+              <option value="Blackrock Mountain">Blackrock Mountain</option>
+              <option value="Hero%2520Skins">Hero Skins</option>
+              <option value="Tavern%2520Brawl">Tavern Brawl</option>
+              <option value="The%2520Grand%2520Tournament">The Grand Tournament</option>
+            </select><br/>
+            <input type="button" id="submitSetForm" value="Rechercher">
+          </form>
+          <form id="typeForm" name="typeForm" style="display:none;">
+            <select name="type">
+              <option value="">--- Type ---</option>
+              <option value="Hero">Hero</option>
+              <option value="Minion">Minion</option>
+              <option value="Spell">Spell</option>
+              <option value="Weapon">Weapon</option>
+              <option value="Hero%2520Power">Hero Power</option>
+            </select><br/>
+            <input type="button" id="submitTypeForm" value="Rechercher">
+          </form>
+          <form id="factionForm" name="factionForm" style="display:none;">
+            <select name="faction">
+              <option value="">--- Faction ---</option>
+              <option value="Horde">Horde</option>
+              <option value="Alliance">Alliance</option>
+              <option value="Neutral">Neutral</option>
+            </select><br/>
+            <input type="button" id="submitFactionForm" value="Rechercher">
+          </form>
+          <form id="qualityForm" name="qualityForm" style="display:none;">
+            <select name="quality">
+              <option value="">--- Quality ---</option>
+              <option value="Free">Free</option>
+              <option value="Common">Common</option>
+              <option value="Rare">Rare</option>
+              <option value="Epic">Epic</option>
+              <option value="Legendary">Legendary</option>
+            </select><br/>
+            <input type="button" id="submitQualityForm" value="Rechercher">
+          </form>
+          <form id="raceForm" name="raceForm" style="display:none;">
+            <select name="race">
+              <option value="">--- Race ---</option>
+              <option value="Demon">Demon</option>
+              <option value="Dragon">Dragon</option>
+              <option value="Mech">Mech</option>
+              <option value="Murloc">Murloc</option>
+              <option value="Beast">Beast</option>
+              <option value="Pirate">Pirate</option>
+              <option value="Totem">Totem</option>
+            </select><br/>
+            <input type="button" id="submitRaceForm" value="Rechercher">
+          </form>
+            <form id="advForm" name="advForm" style="display:none;">
+                <select name="advClas">
+                  <option value="">--- Class ----</option>
+                  <option value="Hunter">Hunter</option>
+                  <option value="Mage">Mage</option>
+                  <option value="Paladin">Paladin</option>
+                  <option value="Priest">Priest</option>
+                  <option value="Rogue">Rogue</option>
+                  <option value="Shaman">Shaman</option>
+                  <option value="Warlock">Warlock</option>
+                  <option value="Warrior">Warrior</option>
+                  <option value="Dream">Dream</option>
+                </select><br/>
+                <select name="advSet">
+                  <option value="">--- Set ---</option>
+                  <option value="Basic">Basic</option>
+                  <option value="Classic">Classic</option>
+                  <option value="Credits">Credits</option>
+                  <option value="Naxxramas">Naxxramas</option>
+                  <option value="Goblins vs Gnomes">Goblins vs Gnomes</option>
+                  <option value="Missions">Missions</option>
+                  <option value="Blackrock Mountain">Blackrock Mountain</option>
+                  <option value="Hero%2520Skins">Hero Skins</option>
+                  <option value="Tavern%2520Brawl">Tavern Brawl</option>
+                  <option value="The%2520Gran%2520Tournament">The Grand Tournament</option>
+                </select><br/>
+                <select name="advType">
+                  <option value="">--- Type ---</option>
+                  <option value="Hero">Hero</option>
+                  <option value="Minion">Minion</option>
+                  <option value="Spell">Spell</option>
+                  <option value="Weapon">Weapon</option>
+                  <option value="Hero%2520Power">Hero Power</option>
+                </select><br/>
+                <select name="advFaction">
+                  <option value="">--- Faction ---</option>
+                  <option value="Horde">Horde</option>
+                  <option value="Alliance">Alliance</option>
+                  <option value="Neutral">Neutral</option>
+                </select><br/>
+                <select name="advQuality">
+                  <option value="">--- Quality ---</option>
+                  <option value="Free">Free</option>
+                  <option value="Common">Common</option>
+                  <option value="Rare">Rare</option>
+                  <option value="Epic">Epic</option>
+                  <option value="Legendary">Legendary</option>
+                </select><br/>
+                <select name="advRace">
+                  <option value="">--- Race ---</option>
+                  <option value="Demon">Demon</option>
+                  <option value="Dragon">Dragon</option>
+                  <option value="Mech">Mech</option>
+                  <option value="Murloc">Murloc</option>
+                  <option value="Beast">Beast</option>
+                  <option value="Pirate">Pirate</option>
+                  <option value="Totem">Totem</option>
+                </select><br/>
+                <p>Cette fonction doit être implémenté</p>
+                <input type="button" id="submitAdvForm" value="Rechercher">
+              </form>
+        </div>
+        <div id="cartes_container">
+            Main container
+        </div>
+    </div>
+<<<<<<< HEAD
+    <script src="main.js"></script>
+    <script type="module" src="callback.js"></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script type="text/jsx" src="components/sidebar.js"></script>
+=======
+    <div id="like_button_container"></div>
+test
 
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="components/like_button.js"></script>
+>>>>>>> origin/back
+</body>
+>>>>>>> master
