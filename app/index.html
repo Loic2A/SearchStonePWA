@@ -1,10 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">    
     <title>Application Searchstone</title>
     <link rel="stylesheet" href="css/Style.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="lib/jquery-3.5.1.js"></script>
 </head>
 <body>
+    <div id="tooltipWrapper" style="display: none;">
+      <div id="tooltip"></div>
+    </div>
     <div class="main_container">
         <div id="sidebar" class="menu_gauche_container">
           <h3 id="title">SearchStone</h3><br/>
@@ -25,6 +30,7 @@
           <form id="clasForm" name="clasForm" style="display:none;">
             <select name="clas">
               <option value="">--- Class ----</option>
+              <option value="Druid">Druid</option>
               <option value="Hunter">Hunter</option>
               <option value="Mage">Mage</option>
               <option value="Paladin">Paladin</option>
@@ -100,6 +106,7 @@
             <form id="advForm" name="advForm" style="display:none;">
                 <select name="advClas">
                   <option value="">--- Class ----</option>
+                  <option value="Druid">Druid</option>
                   <option value="Hunter">Hunter</option>
                   <option value="Mage">Mage</option>
                   <option value="Paladin">Paladin</option>
@@ -155,17 +162,13 @@
                   <option value="Pirate">Pirate</option>
                   <option value="Totem">Totem</option>
                 </select><br/>
-                <p>Cette fonction doit être implémenté</p>
                 <input type="button" id="submitAdvForm" value="Rechercher">
               </form>
         </div>
         <div id="cartes_container">
-            Main container
         </div>
     </div>
     <script src="main.js"></script>
     <script type="module" src="callback.js"></script>
-    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
     <script type="text/jsx" src="components/sidebar.js"></script>
 </body>
