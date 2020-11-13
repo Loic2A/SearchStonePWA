@@ -4,7 +4,7 @@ export function getCarteByName(name, callback) {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/"+name+"",
+        "url": "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/"+name+"?locale=frFR",
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "omgvamp-hearthstone-v1.p.rapidapi.com",
