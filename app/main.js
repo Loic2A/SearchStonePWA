@@ -59,7 +59,7 @@ function switchSearchElement(searchElement){
 }
 
 function displayCards(jsonList = currCardList){
-    console.log(jsonList);
+    //console.log(jsonList);
     var currSort = "name";
     jsonList = sortJSON(jsonList, currSort, true);
     currCardList = jsonList;

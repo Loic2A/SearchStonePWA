@@ -16,22 +16,22 @@ export function getCarteByMultiple(arg, callback) {
 
 
     if (args.classes != null) {
-        console.log("coucou classe");
+        //console.log("coucou classe");
         getCarteByClass(args.classes, trieClasse);
     } else if (args.sets != null) {
-        console.log("coucou set");
+        //console.log("coucou set");
         getCarteBySet(args.sets, trieSet);
     } else if (args.types != null) {
-        console.log("coucou type");
+        //console.log("coucou type");
         getCarteByType(args.types, trieType);
     } else if (args.factions != null) {
-        console.log("coucou faction");
+        //console.log("coucou faction");
         getCarteByFaction(args.factions, trieFaction);
     } else if (args.qualities != null) {
-        console.log("coucou quality");
+        //console.log("coucou quality");
         getCarteByQuality(args.qualities, trieQuality);
     } else if (args.races != null) {
-        console.log("coucou race");
+        //console.log("coucou race");
         getCarteByRace(args.races, trieRace);
     }
 }
