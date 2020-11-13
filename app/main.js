@@ -1,4 +1,3 @@
-const { json } = require("express");
 var currCardList = "";
 
 var permNotification = false;
