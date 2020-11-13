@@ -13,7 +13,6 @@ if (navigator.serviceWorker) {
     });
 }
 
-/*
 // Vérifie si la fonctionalité est disponible et si l'utilisateur n'a pas refusé les notifications
 if(window.Notification && window.Notification !== "denied") {
     Notification.requestPermission(perm => {
@@ -26,7 +25,6 @@ if(window.Notification && window.Notification !== "denied") {
     });
 }
 
- */
 
 $(document).ready(function(){
     $("#tooltipWrapper").click(function(event){
