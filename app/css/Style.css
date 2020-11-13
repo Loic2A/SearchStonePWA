@@ -135,6 +135,7 @@ h3 {
   height: 35px;
   width: 110px;
   border-radius: 5px;
+  color: #fff;
 }
 .searchButton:hover{
   background: rgb(201, 156, 119);
