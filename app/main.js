@@ -7,20 +7,21 @@ if (navigator.serviceWorker) {
     navigator.serviceWorker.register('sw.js').then(function(reg) {
         // registration worked
         //console.log('Registration succeeded. Scope is ' + reg.scope);
-        // Vérifie si la fonctionalité est disponible et si l'utilisateur n'a pas refusé les notifications
-        if(window.Notification && window.Notification !== "denied") {
-            Notification.requestPermission(perm => {
-                if (perm === "granted") {
-                    //console.log("Notification acceptée");
-                    permNotification = true;
-                } else {
-                    //console.log("Notification refusée");
-                }
-            });
-        }
     }).catch(function(error) {
         // registration failed
         console.log('Registration failed with ' + error);
+    });
+}
+
+// Vérifie si la fonctionalité est disponible et si l'utilisateur n'a pas refusé les notifications
+if(window.Notification && window.Notification !== "denied") {
+    Notification.requestPermission(perm => {
+        if (perm === "granted") {
+            //console.log("Notification acceptée");
+            permNotification = true;
+        } else {
+            //console.log("Notification refusée");
+        }
     });
 }
 
