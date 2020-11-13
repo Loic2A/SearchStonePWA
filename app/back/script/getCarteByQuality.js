@@ -4,7 +4,7 @@ export function getCarteByQuality(quality, callback) {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/qualities/"+ quality +"",
+        "url": "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/qualities/"+ quality +"?locale=frFR",
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "omgvamp-hearthstone-v1.p.rapidapi.com",

@@ -4,7 +4,7 @@ export function getCarteByFaction(faction, callback) {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/factions/"+ faction +"",
+        "url": "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/factions/"+ faction +"?locale=frFR",
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "omgvamp-hearthstone-v1.p.rapidapi.com",
