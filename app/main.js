@@ -48,23 +48,26 @@ function switchSearchElement(searchElement){
 }
 
 function displayCards(jsonList = currCardList){
-    currCardList = jsonList;
     console.log(jsonList);
     var currSort = "name";
     jsonList = sortJSON(jsonList, currSort, true);
+    currCardList = jsonList;
     document.getElementById("cartes_container").innerHTML = "";
     console.log(jsonList);
     lenList = jsonList.length;
+    cardNbr = 0;
     for(var key in jsonList){
         if(jsonList[key].type != "Enchantment"){
             var elem = document.createElement("img");
             var divElem = document.createElement("div");
             elem.setAttribute("src", jsonList[key].img);
+            elem.setAttribute("onClick", "displayTooltip(" + cardNbr + ")");
             divElem.appendChild(elem);
             document.getElementById("cartes_container").appendChild(divElem);
         }else{
             lenList -= 1;
         }
+        cardNbr++;
     }
     afficherNotificationRecherche(lenList);
 }
@@ -77,4 +80,8 @@ function sortJSON(jsonArray, termToSort, boolAsc){
             return (b[termToSort] > a[termToSort]) ? 1 : ((b[termToSort] < a [termToSort]) ? -1 : 0);
         }
     });
+}
+
+function displayTooltip(cardNbr){
+    document.getElementById("tooltip").style.display="block";
 }

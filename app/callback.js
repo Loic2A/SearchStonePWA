@@ -57,7 +57,23 @@ $(document).ready(function(){
         var faction = document.advForm.advFaction.value;
         var quality = document.advForm.advQuality.value;
         var race = document.advForm.advRace.value;
-        console.log(clas,  set, type, faction, quality, race);
-        //getCarteByMultiple();
+        
+        clas ? {} : clas = null;
+        set ? {} : set = null;
+        type ? {} : type = null;
+        faction ? {} : faction = null;
+        quality ? {} : quality = null;
+        race ? {} : race = null;
+
+        var args ={
+            "classes": clas,
+            "sets": set,
+            "types": type,
+            "factions": faction,
+            "qualities": quality,
+            "races": race
+        };
+
+        getCarteByMultiple(args, displayCards);
     });
 });
