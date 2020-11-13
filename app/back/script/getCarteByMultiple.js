@@ -6,104 +6,144 @@ import { getCarteByQuality } from "/back/script/getCarteByQuality.js";
 import { getCarteByRace } from "/back/script/getCarteByRace.js";
 
 let args = {};
+let callbackGlobal;
 
 //fait une requete sur l'api à partir d'un critère puis filtre le resultat obtenus selon les autres critères
-export function getCarteByMultiple(arg) {
+export function getCarteByMultiple(arg, callback) {
 
     args = arg;
+    callbackGlobal = callback;
 
-    var response1 = {};
 
     if (args.classes != null) {
         console.log("coucou classe");
-        response1 = getCarteByClass(args.classes, trieClasse);
+        getCarteByClass(args.classes, trieClasse);
     } else if (args.sets != null) {
         console.log("coucou set");
-        response1= getCarteBySet(args.sets, trieSet);
+        getCarteBySet(args.sets, trieSet);
     } else if (args.types != null) {
         console.log("coucou type");
-        response1 = getCarteByType(args.types, trieType);
+        getCarteByType(args.types, trieType);
     } else if (args.factions != null) {
         console.log("coucou faction");
-        response1 = getCarteByFaction(args.factions, trieFaction);
+        getCarteByFaction(args.factions, trieFaction);
     } else if (args.qualities != null) {
         console.log("coucou quality");
-        response1 = getCarteByQuality(args.qualities, trieQuality);
+        getCarteByQuality(args.qualities, trieQuality);
     } else if (args.races != null) {
         console.log("coucou race");
-        response1 = getCarteByRace(args.races, trieRace);
+        getCarteByRace(args.races, trieRace);
     }
-    console.log(response1);
-    return response1;
 }
 
 function trieClasse(response) {
     var res = {};
 
-    $.each(response, function (j, carte) {
+    if (args.sets != null) {
+        response = response.filter(function (response) {
+            return response.cardSet == args.sets;
+        });
+    }
+    if (args.types != null) {
+        response = response.filter(function (response) {
+            return response.type == args.types;
+        });
+    }
+    if (args.factions != null) {
+        response = response.filter(function (response) {
+            return response.faction == args.factions;
+        });
+    }
+    if (args.qualities != null) {
+        response = response.filter(function (response) {
+            return response.rarity == args.qualities;
+        });
+    }
+    if (args.races != null) {
+        response = response.filter(function (response) {
+            return response.race == args.races;
+        });
+    }
 
-        console.log("coucou each");
-        if (carte.sets == args.sets & carte.types == args.types & carte.factions == args.factions & carte.qualities == args.qualities & carte.races == args.races) {
-            console.log("coucou");
-            res.push(set);
-        }
-    });
-
-    return res;
+    callbackGlobal(response);
 }
 
 function trieSet(response) {
     var res = {};
 
-    $.each(response, function (i, set) {
-        if (set.types == args.types & set.factions == args.factions & set.qualities == args.qualities & set.race == args.races) {
-            console.log("coucou");
-            res.push(set);
-        }
-    });
+    if (args.types != null) {
+        response = response.filter(function (response) {
+            return response.type == args.types;
+        });
+    }
+    if (args.factions != null) {
+        response = response.filter(function (response) {
+            return response.faction == args.factions;
+        });
+    }
+    if (args.qualities != null) {
+        response = response.filter(function (response) {
+            return response.rarity == args.qualities;
+        });
+    }
+    if (args.races != null) {
+        response = response.filter(function (response) {
+            return response.race == args.races;
+        });
+    }
 
-    return res;
+    callbackGlobal(response);
 }
 
 function trieType(response) {
     var res = {};
 
-    $.each(response, function (i, set) {
-        if (set.faction == args.factions & set.rarity == args.qualities & set.race == args.races) {
-            console.log("coucou");
-            res.push(set);
-        }
-    });
+    if (args.factions != null) {
+        response = response.filter(function (response) {
+            return response.faction == args.factions;
+        });
+    }
+    if (args.qualities != null) {
+        response = response.filter(function (response) {
+            return response.rarity == args.qualities;
+        });
+    }
+    if (args.races != null) {
+        response = response.filter(function (response) {
+            return response.race == args.races;
+        });
+    }
 
-    return res;
+    callbackGlobal(response);
 }
 
 function trieFaction(response) {
     var res = {};
 
-    $.each(response, function (i, set) {
-        if (set.qualities == args.qualities & set.races == args.races) {
-            console.log("coucou");
-            res.push(set);
-        }
-    });
-
-    return res;
+    if (args.qualities != null) {
+        response = response.filter(function (response) {
+            return response.rarity == args.qualities;
+        });
+    }
+    if (args.races != null) {
+        response = response.filter(function (response) {
+            return response.race == args.races;
+        });
+    }
+    callbackGlobal(response);
 }
 
 function trieQuality(response) {
-    var res = {};
 
-    $.each(response, function (i, set) {
-        if (set.qualities == args.qualities & set.races == args.races) {
-            console.log("coucou");
-            res.push(set);
-        }
-    });
+    if (args.races != null) {
+        response = response.filter(function (response) {
+            return response.race == args.races;
+        });
+    }
 
-    return res;
+    callbackGlobal(response);
 }
 
 function trieRace(response) {
-    return response;
+    callbackGlobal(response);
 }
