@@ -14,13 +14,27 @@
     </div>
     <div id="searchWrapper" class="wrapper" style="display: none;">
       <div id="searchTools" class="popup">
+        <div class="containerAdvancedSearch">
+          <label class="labelAdancedSearch">Recherche avancée : </label>
+          <!-- switch -->
+          <label class="switchRecherche">
+            <input type="checkbox" onclick="switchSearch()">
+            <span class="slider round"></span>
+          </label>          
+          <!-- Fin switch -->
+        </div>
+        
         <div id="searchType">
           <div onClick="switchSearchElement('name')" id="nameBtn" class="searchBtn active">Nom</div>
           <div onClick="switchSearchElement('adv')" id="advBtn" class="searchBtn">Avancé</div>
         </div>
         <form id="nameForm" class="searchForm" name="nameForm">
-          <input name="name" placeholder="Nom"><br/>
-          <input type="button" id="submitNameForm" class="searchButton" value="Rechercher">
+          <div id="containerInputSearchByName" class="containerInputSearchByName">
+            <input name="name" placeholder="Nom" class="searchByName">
+          </div>
+          <div class="containerButtonSearchInput">
+            <input type="button" id="submitNameForm" class="searchButton" value="Rechercher">
+          </div>          
         </form>
         <form id="advForm" class="searchForm" name="advForm" style="display:none;">
           <select name="advClas">

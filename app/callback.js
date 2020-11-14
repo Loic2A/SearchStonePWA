@@ -6,7 +6,10 @@ $(document).ready(function(){
         var name = document.nameForm.name.value.replace(/ /g, "%2520");
         //console.log(name);
         getCarteByName(name, displayCards);
-        document.getElementById("searchWrapper").style.display = "none";
+        var tailleDevice =  window.screen.width;
+        if(tailleDevice > 1000){
+            document.getElementById("searchWrapper").style.display = "none";
+        }
     });
 
     $("#submitAdvForm").click(function() {
