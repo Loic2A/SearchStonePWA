@@ -5,29 +5,21 @@ h3 {
   margin: 0;
 }
 
+html,
+body {
+  background-color: #5f311a;
+}
+
 .main_container {
   display: flex;
   min-height: 100vh;
 }
 
-#sidebar {
-  flex-grow: 1;
-  max-width: 300px;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-#sidebar form,
-#sidebar form input,
-#sidebar form select {
-  width: calc(100% - 10px);
-  padding: 0;
-  margin: 5px;
-  border: none;
-}
-
-#sidebar form input,
-#sidebar form select {
-  padding: 3px 0px;
+#navbar {
+  position: fixed;
+  width: 100%;
+  background-color: rgb(87, 175, 226);
+  z-index: 50;
 }
 
 #title {
@@ -37,11 +29,19 @@ h3 {
   padding: 10px 0px;
 }
 
+#searchTools {
+  padding: 10px;
+}
+
 #searchType {
   display: flex;
   flex-wrap: wrap;
+  flex-grow: 1;
   color: #fff;
   margin: 0px 10px;
+}
+
+.searchForm {
 }
 
 .searchBtn {
@@ -75,7 +75,10 @@ h3 {
   flex-wrap: wrap;
   width: 100%;
   flex-grow: 0;
-  background-color: rgb(116, 93, 72);
+  background: url(../images/img/backgroundWood3.jpg);
+  background-repeat: repeat-y;
+  background-size: 100%;
+  padding-bottom: 10px;
 }
 
 #cartes_container div {
@@ -93,22 +96,26 @@ h3 {
   cursor: pointer;
 }
 
-#tooltipWrapper {
+.wrapper {
   position: fixed;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.popup {
+  align-items: center;
+  border-radius: 10%;
+  background-color: rgba(0, 0, 0, 0.75);
+  max-width: 1000px;
 }
 
 #tooltip {
   display: flex;
-  align-items: center;
-  border-radius: 10%;
   padding-right: 20px;
-  background-color: rgba(0, 0, 0, 0.75);
-  max-width: 1000px;
 }
 
 #tooltip img {
@@ -129,7 +136,7 @@ h3 {
 .info {
   font-size: 1.2em;
 }
-.searchButton{
+.searchButton {
   border: solid 2px rgb(116, 93, 72);
   background: rgb(116, 93, 72);
   height: 35px;
@@ -137,7 +144,21 @@ h3 {
   border-radius: 5px;
   color: #fff;
 }
-.searchButton:hover{
+.searchButton:hover {
   background: rgb(201, 156, 119);
   cursor: pointer;
+}
+
+.floatingButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background: url(../images/icons/Loupe.svg);
+  background-size: 50%;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
 }

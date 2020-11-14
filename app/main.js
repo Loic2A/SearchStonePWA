@@ -36,6 +36,19 @@ $(document).ready(function(){
         event.stopPropagation();
     });
 });
+$(document).ready(function(){
+    $("#searchWrapper").click(function(event){
+        document.getElementById("searchWrapper").style.display = "none";
+    });
+});
+$(document).ready(function(){
+    $("#searchTools").click(function(event){
+        event.stopPropagation();
+    });
+});
+$(document).ready(function(){
+    document.getElementById("searchWrapper").style.display = "flex";
+});
 
 function afficherNotificationRecherche(len) {
     if(permNotification === true) {
@@ -60,10 +73,14 @@ function switchSearchElement(searchElement){
     document.getElementById(formToShow).style.display = "block";
 }
 
+function displaySearch(){
+    document.getElementById("searchWrapper").style.display="flex";
+}
+
 function displayCards(jsonList = currCardList){
     //console.log(jsonList);
-    var currSort = "name";
-    jsonList = sortJSON(jsonList, currSort, true);
+    var currSort = "cost";
+    jsonList = sortJSON(jsonList, currSort, false);
     currCardList = jsonList;
     document.getElementById("cartes_container").innerHTML = "";
     //console.log(jsonList);
@@ -76,6 +93,8 @@ function displayCards(jsonList = currCardList){
             elem.setAttribute("src", jsonList[key].img);
             elem.setAttribute("class", "cardImage");
             elem.setAttribute("onClick", "displayTooltip(" + cardNbr + ")");
+            var randRotation = Math.random() * 15 - 7.5;
+            elem.setAttribute("style", "transform: rotate(" + randRotation + "deg);");
             divElem.appendChild(elem);
             document.getElementById("cartes_container").appendChild(divElem);
         }else{
@@ -91,7 +110,7 @@ function sortJSON(jsonArray, termToSort, boolAsc){
         if (boolAsc) {
             return (a[termToSort] > b[termToSort]) ? 1 : ((a[termToSort] < b [termToSort]) ? -1 : 0);
         } else {
-            return (b[termToSort] > a[termToSort]) ? 1 : ((b[termToSort] < a [termToSort]) ? -1 : 0);
+            return (b[termToSort] > a[termToSort]) ? 1 : ((b[termToSort] < a [termToSort]) ? -1 : 1);
         }
     });
 }
