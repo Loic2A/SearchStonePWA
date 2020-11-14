@@ -1,6 +1,12 @@
 import {getCarteByName} from "/back/script/getCarteByName.js";
 import {getCarteByMultiple} from "/back/script/getCarteByMultiple.js";
 
+var tailleScreen = window.screen.width;
+var mobile = false;
+if(tailleScreen < 1000){
+    mobile = true;
+}
+
 $(document).ready(function(){
     $("#submitNameForm").click(function() {
         var name = document.nameForm.name.value.replace(/ /g, "%2520");
@@ -37,6 +43,8 @@ $(document).ready(function(){
         };
 
         getCarteByMultiple(args, displayCards);
-        document.getElementById("searchWrapper").style.display = "none";
+        if(mobile == false){
+            document.getElementById("searchWrapper").style.display = "none";
+        }
     });
 });

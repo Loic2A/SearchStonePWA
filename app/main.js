@@ -1,6 +1,12 @@
 var currCardList = "";
 var statusSwitch = false;
 var permNotification = false;
+var tailleScreen = window.screen.width;
+var mobile = false;
+if(tailleScreen < 1000){
+    mobile = true;
+}
+
 
 //pas toucher ca register le sw
 if (navigator.serviceWorker) {
@@ -28,7 +34,9 @@ if(window.Notification && window.Notification !== "denied") {
 
 $(document).ready(function(){
     $("#tooltipWrapper").click(function(event){
-        document.getElementById("tooltipWrapper").style.display = "none";
+        if(mobile == false){
+            document.getElementById("tooltipWrapper").style.display = "none";
+        }
     });
 });
 $(document).ready(function(){
@@ -38,7 +46,9 @@ $(document).ready(function(){
 });
 $(document).ready(function(){
     $("#searchWrapper").click(function(event){
-        document.getElementById("searchWrapper").style.display = "none";
+        if(mobile == false){
+            document.getElementById("searchWrapper").style.display = "none";
+        }
     });
 });
 $(document).ready(function(){
