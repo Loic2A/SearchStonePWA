@@ -1,5 +1,5 @@
 var currCardList = "";
-
+var statusSwitch = false;
 var permNotification = false;
 
 //pas toucher ca register le sw
@@ -157,4 +157,19 @@ function createLine(cardNbr, cardInfo, infoTitle){
     data.appendChild(title);
     data.appendChild(info);
     return data;
+}
+
+function switchSearch(){
+    if(statusSwitch == false){
+        document.getElementById("advForm").style.display = "";
+        document.getElementById("containerInputSearchByName").style.display = "none";        
+        statusSwitch = true;
+        console.log(statusSwitch);
+    }    
+    else{
+        document.getElementById("advForm").style.display = "none";
+        document.getElementById("containerInputSearchByName").style.display = "";
+        statusSwitch = false;
+        console.log(statusSwitch);
+    }
 }
