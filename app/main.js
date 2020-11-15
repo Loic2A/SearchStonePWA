@@ -173,13 +173,15 @@ function createLine(cardNbr, cardInfo, infoTitle){
 function switchSearch(){
     if(statusSwitch == false){
         document.getElementById("advForm").style.display = "";
-        document.getElementById("containerInputSearchByName").style.display = "none";        
+        document.getElementById("containerInputSearchByName").style.display = "none";   
+        document.getElementById("submitNameForm").style.display = "none";     
         statusSwitch = true;
         console.log(statusSwitch);
     }    
     else{
         document.getElementById("advForm").style.display = "none";
         document.getElementById("containerInputSearchByName").style.display = "";
+        document.getElementById("submitNameForm").style.display = "";
         statusSwitch = false;
         console.log(statusSwitch);
     }
