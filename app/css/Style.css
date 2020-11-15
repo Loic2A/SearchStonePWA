@@ -121,6 +121,9 @@ input:checked + .slider:before {
     top: 4%;
     position: absolute;
   }
+  .containerButtonSearchInput{
+    text-align: center;
+  }
   .switchRecherche{
     display: inline-block;
   }
@@ -145,15 +148,18 @@ input:checked + .slider:before {
   .floatingButton{
     /* display:none !important; */
   }
-  #submitNameForm{
-    /* position: fixed;
-    bottom: 30px;
-    right: 20px; */
-  }
+  #submitNameForm, #submitAdvForm{
+    font-size: 35px;
+    width: 250px;
+    height: 60px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }  
   #advForm{
-    width: 20%;
+    width: 72%;
     margin-left: 15%;
     margin-top: 7%;
+    text-align: center;
   }
   .listSelect{
     width: 700px;
@@ -170,6 +176,16 @@ input:checked + .slider:before {
   .floatingButton {
     height: 200px !important;
     width: 200px !important;
+  }
+  #tooltip{
+    width: 90% !important;
+  }
+  #tooltip img {
+    max-height: 775px !important;
+  }
+  #allData {
+    max-width: 775px !important;
+    font-size: 35px !important;
   }
 }
 
