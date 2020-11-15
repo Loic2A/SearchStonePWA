@@ -34,9 +34,9 @@ if(window.Notification && window.Notification !== "denied") {
 
 $(document).ready(function(){
     $("#tooltipWrapper").click(function(event){
-        if(mobile == false){
+        // if(mobile == false){
             document.getElementById("tooltipWrapper").style.display = "none";
-        }
+        // }
     });
 });
 $(document).ready(function(){
@@ -46,9 +46,9 @@ $(document).ready(function(){
 });
 $(document).ready(function(){
     $("#searchWrapper").click(function(event){
-        if(mobile == false){
+        // if(mobile == false){
             document.getElementById("searchWrapper").style.display = "none";
-        }
+        // }
     });
 });
 $(document).ready(function(){
