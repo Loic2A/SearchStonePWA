@@ -85,6 +85,7 @@ function switchSearchElement(searchElement){
 
 function displaySearch(){
     document.getElementById("searchWrapper").style.display="flex";
+    console.log("test");
 }
 
 function displayCards(jsonList = currCardList){

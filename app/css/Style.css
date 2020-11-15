@@ -146,12 +146,12 @@ input:checked + .slider:before {
     margin: auto;
   }
   .floatingButton{
-    display:none !important;
+    /* display:none !important; */
   }
   #submitNameForm{
-    position: fixed;
+    /* position: fixed;
     bottom: 30px;
-    right: 20px;
+    right: 20px; */
   }
   #advForm{
     width: 20%;
