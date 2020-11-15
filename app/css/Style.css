@@ -168,6 +168,9 @@ input:checked + .slider:before {
   optgroup { 
     font-size:15px; 
   }
+  #cartes_container img {
+    max-width: 460px !important;
+  }
 }
 
 #searchType {
