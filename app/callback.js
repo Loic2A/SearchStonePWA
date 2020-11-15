@@ -13,9 +13,7 @@ $(document).ready(function(){
         //console.log(name);
         getCarteByName(name, displayCards);
         var tailleDevice =  window.screen.width;
-        if(tailleDevice > 1000){
-            document.getElementById("searchWrapper").style.display = "none";
-        }
+        document.getElementById("searchWrapper").style.display = "none";
     });
 
     $("#submitAdvForm").click(function() {
@@ -43,8 +41,6 @@ $(document).ready(function(){
         };
 
         getCarteByMultiple(args, displayCards);
-        if(mobile == false){
-            document.getElementById("searchWrapper").style.display = "none";
-        }
+        document.getElementById("searchWrapper").style.display = "none";        
     });
 });

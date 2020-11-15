@@ -111,9 +111,6 @@ input:checked + .slider:before {
 /* Fin switch recherche */
 
 @media (max-width: 1000px) {
-  #cartes_container{
-    margin-top: 30% !important;
-  }
   #searchTools {
     padding: 10px;
     width: 100%;
@@ -171,8 +168,8 @@ input:checked + .slider:before {
     max-width: 460px !important;
   }
   .floatingButton {
-    height: 200px;
-    width: 200px;
+    height: 200px !important;
+    width: 200px !important;
   }
 }
 

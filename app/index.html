@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<!-- <html lang="en"> -->
 <head>
     <meta charset="UTF-8">    
     <title>Application Searchstone</title>
@@ -39,7 +39,7 @@
         <form id="advForm" class="searchForm" name="advForm" style="display:none;">
           <select name="advClas" class="listSelect">
             <optgroup>
-              <option value="">--- Class ----</option>
+              <option value="">--- Class ---</option>
               <option value="Druid">Druid</option>
               <option value="Hunter">Hunter</option>
               <option value="Mage">Mage</option>
@@ -111,8 +111,7 @@
           <input type="button" id="submitAdvForm" class="searchButton" value="Rechercher">
         </form>
       </div>
-    </div>
-    <button class="floatingButton" onclick="displaySearch();"></button>
+    </div>    
     <div class="main_container">
         <div id="navbar" class="menu_gauche_container">
           <h3 id="title">SearchStone</h3>
@@ -120,6 +119,7 @@
         <div id="cartes_container">
         </div>
     </div>
+    <button class="floatingButton" onclick="displaySearch();"></button>
     <script src="main.js"></script>
     <script type="module" src="callback.js"></script>
     <script type="text/jsx" src="components/sidebar.js"></script>
